@@ -1,16 +1,34 @@
-# React + Vite
+# Batch EPUB Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A secure, client-side web application to "fix" Apple Books EPUB files by removing metadata that causes compatibility issues with other e-readers (Kindle, Kobo, etc.).
 
-Currently, two official plugins are available:
+**Features:**
+*   **Batch Processing**: Convert multiple .epub or .zip files at once.
+*   **100% Client-Side**: No files are ever uploaded to a server. All processing happens in your browser.
+*   **Directory Support**: Drag and drop uncompressed ebook folders directly.
+*   **Modern UI**: Built with React, Vite, and TailwindCSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to Run Locally
 
-## React Compiler
+You need [Node.js](https://nodejs.org/) installed on your machine.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1.  **Open your terminal** and navigate to this directory.
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Start the development server**:
+    ```bash
+    npm run dev
+    ```
+4.  Open the link shown in the terminal (usually `http://localhost:5173`) in your browser.
 
-## Expanding the ESLint configuration
+## How to Build for Production
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To create a static version of the app (e.g., for deployment):
+
+1.  Run the build command:
+    ```bash
+    npm run build
+    ```
+2.  The output files will be in the `dist` folder. You can host this folder on any static site hosting service (GitHub Pages, Vercel, Netlify, Cloudflare Pages).
