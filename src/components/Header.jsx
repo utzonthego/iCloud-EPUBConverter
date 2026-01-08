@@ -10,7 +10,7 @@ export default function Header() {
                         <BookOpen size={24} />
                     </div>
                     <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                        EPUB Fixer <span className="text-xs text-blue-500/60 font-mono ml-2 border border-blue-500/20 px-1.5 py-0.5 rounded bg-blue-500/10 align-middle">v1.0.1</span>
+                        EPUB Fixer <span className="text-xs text-blue-500/60 font-mono ml-2 border border-blue-500/20 px-1.5 py-0.5 rounded bg-blue-500/10 align-middle">v1.0.2</span>
                     </h1>
                 </div>
                 <div className="text-sm text-gray-400 font-medium">
