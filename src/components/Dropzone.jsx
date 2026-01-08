@@ -43,16 +43,21 @@ export default function Dropzone({ onFilesAdded }) {
                     const dirReader = entry.createReader();
 
                     // Helper to read entries (not recursive in one call)
-                    const readEntries = (reader) => {
-                        return new Promise((resolve, reject) => {
-                            reader.readEntries((entries) => {
-                                // readEntries can return partial results, but typical usage implies calling until empty.
-                                // For simplicity here, assuming one call gets most/all or simple structure.
-                                // Real robust impl needs recursion on readEntries.
-                                resolve(entries);
-                            }, reject);
-                        });
-                    };
+  // Helper to read entries (recursive for pagination)
+  const readEntries = async (reader) => {
+    let allEntries = [];
+    let entries = await new Promise((resolve, reject) => {
+      reader.readEntries(resolve, reject);
+    });
+
+    while (entries.length > 0) {
+      allEntries = allEntries.concat(entries);
+      entries = await new Promise((resolve, reject) => {
+        reader.readEntries(resolve, reject);
+      });
+    }
+    return allEntries;
+  };
 
                     // Recursive zipper
                     const processEntry = async (currentEntry, currentZip) => {
